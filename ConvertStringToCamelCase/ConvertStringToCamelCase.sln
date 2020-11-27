@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertStringToCamelCase", "ConvertStringToCamelCase\ConvertStringToCamelCase.csproj", "{7790E656-D8D3-4638-8778-31660D8B2B6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitTestProject1", "NUnitTestProject1\NUnitTestProject1.csproj", "{5007FA4B-68B0-413F-A549-033093E51D10}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7790E656-D8D3-4638-8778-31660D8B2B6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7790E656-D8D3-4638-8778-31660D8B2B6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7790E656-D8D3-4638-8778-31660D8B2B6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7790E656-D8D3-4638-8778-31660D8B2B6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5007FA4B-68B0-413F-A549-033093E51D10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5007FA4B-68B0-413F-A549-033093E51D10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5007FA4B-68B0-413F-A549-033093E51D10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5007FA4B-68B0-413F-A549-033093E51D10}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A6A8E63-15E2-44CC-B1E1-7C067F26D357}
+	EndGlobalSection
+EndGlobal
