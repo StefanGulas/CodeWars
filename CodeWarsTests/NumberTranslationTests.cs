@@ -64,7 +64,7 @@ namespace CodeWarsTests
     public void Test958()
     {
       var translation = new NumberTranslation();
-      string expected = "nine hundred fity-eight";
+      string expected = "nine hundred fifty-eight";
       string actual = translation.Number2Words(958);
 
       Assert.Equal(expected, actual);
