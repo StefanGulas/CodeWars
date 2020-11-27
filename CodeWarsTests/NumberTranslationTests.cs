@@ -78,6 +78,42 @@ namespace CodeWarsTests
 
       Assert.Equal(expected, actual);
     }
+    [Fact]
+    public void Test15368()
+    {
+      var translation = new NumberTranslation();
+      string expected = "fifteen thousand three hundred sixty-eight";
+      string actual = translation.Number2Words(15368);
+
+      Assert.Equal(expected, actual);
+    }
+    [Fact]
+    public void Test700000()
+    {
+      var translation = new NumberTranslation();
+      string expected = "seven hundred thousand";
+      string actual = translation.Number2Words(700000);
+
+      Assert.Equal(expected, actual);
+    }
+    [Fact]
+    public void Test999999()
+    {
+      var translation = new NumberTranslation();
+      string expected = "nine hundred ninety-nine thousand nine hundred ninety-nine";
+      string actual = translation.Number2Words(999999);
+
+      Assert.Equal(expected, actual);
+    }
+    [Fact]
+    public void Test70000()
+    {
+      var translation = new NumberTranslation();
+      string expected = "seventy thousand";
+      string actual = translation.Number2Words(70000);
+
+      Assert.Equal(expected, actual);
+    }
 
   }
 }
