@@ -23,6 +23,22 @@ namespace CodeWars
     public MainWindow()
     {
       InitializeComponent();
+      DataContext = this;
+      var translation = new NumberTranslation();
     }
-  }
-}
+      //string expected = "thirteen";
+      public string ResultString
+      {
+        get { return resultString; }
+        set { resultString = value; }
+      }
+      private string resultString;
+    }
+      //string actual = translation.Number2Words(4);
+      //resultString = "Actual: " + actual + "vs. Expected: thirteen";
+
+
+
+    }
+
+
