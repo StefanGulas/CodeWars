@@ -16,7 +16,7 @@ namespace CodeWars
       if (s == "") return new List<string>() { };
       s = s.ToLower();
       List<string> result = s.Split(' ').ToList();
-      result.Remove("");
+      result.RemoveAll(item => item == "");
       if (result.Count < 3) return result;
       var topWords = new Dictionary<string, int>();
       var top2Words = new Dictionary<string, int>();
@@ -25,32 +25,24 @@ namespace CodeWars
       int counter = 0;
       for (int i = 0; i < result.Count; i++)
       {
+        if (topWords.ContainsKey(result[i]) == true) continue;
+
         for (int j = 0; j < result.Count; j++)
         {
           if (result[j] == result[i]) counter++;
         }
         topWords.Add(result[i], counter);
+        counter = 0;
+      }
+      foreach (KeyValuePair<string, int> item in topWords.OrderBy(key => key.Value))
+      {
+        result.Clear();
+        result.Add(topWords.Keys())
+
       }
 
-      
-      //  if (counter > top3Words[,])
-      //    if (counter > top2Counter)
-      //    {
-      //      top3Counter = top2Counter;
-      //      if (counter > top1Counter)
-      //      {
-      //        top2Counter = top1Counter;
-      //        top1Counter = counter;
-      //      }
-      //      else
-      //      {
-      //        top2Counter = counter;
-      //      }
-      //    }
-      //    else top3Counter = counter;
-      //topWords = { top1Conter, top2Counter, top3Counter};
-        
-        // Your code here
+
+
       return result;
     }
   }
