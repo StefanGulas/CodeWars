@@ -9,12 +9,17 @@ namespace CodeWars
 
     public static List<string> Top3(string s)
     {
-      int top1Counter = 0;
-      int top2Counter = 0;
-      int top3Counter = 0;
 
       if (s == "") return new List<string>() { };
       s = s.ToLower();
+      s = s.Replace(",", "");
+      s = s.Replace("/", "");
+      s = s.Replace(".", "");
+      s = s.Replace(" ' ", "");
+      s = s.Replace("''", "");
+      s = s.Replace("' ", "");
+      s = s.Replace(" '", "");
+
       List<string> result = s.Split(' ').ToList();
       result.RemoveAll(item => item == "");
       if (result.Count < 3) return result;
@@ -35,9 +40,12 @@ namespace CodeWars
       result.Clear();
       var output = topWords.OrderBy(e => e.Value).Select(e => new { e.Key }).ToList();
 
-      result.Add(output[output.Count-1].Key.ToString());
-      result.Add(output[output.Count-2].Key.ToString());
-      result.Add(output[output.Count-3].Key.ToString());
+      for (int i = output.Count-1; i >=0; i--)
+      {
+      result.Add(output[i].Key.ToString());
+        counter++;
+        if (counter > 2) break;
+      }
 
       return result;
     }
