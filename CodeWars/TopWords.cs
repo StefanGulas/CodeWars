@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace CodeWars
@@ -12,19 +11,28 @@ namespace CodeWars
 
       if (s == "") return new List<string>() { };
       s = s.ToLower();
+      s = s.Replace("''", "");
+      //s = s.Replace(" ' ", "");
+      s = s.Replace("' ", "");
+      s = s.Replace(" '", "");
       s = s.Replace(",", "");
       s = s.Replace("/", "");
       s = s.Replace(".", "");
-      s = s.Replace(" ' ", "");
-      s = s.Replace("''", "");
-      s = s.Replace("' ", "");
-      s = s.Replace(" '", "");
+      s = s.Replace("?", "");
+      s = s.Replace(":", "");
+      s = s.Replace("!", "");
+      s = s.Replace("-", "");
+      s = s.Replace("(", "");
+      s = s.Replace(")", "");
+      s = s.Replace("\r\n", "");
+      s = s.Replace("\n", "");
+      s = s.Replace("\r", "");
+
 
       List<string> result = s.Split(' ').ToList();
       result.RemoveAll(item => item == "");
       if (result.Count < 3) return result;
       var topWords = new SortedDictionary<string, int>();
-      string actualWord;
       int counter = 0;
       for (int i = 0; i < result.Count; i++)
       {
@@ -40,9 +48,9 @@ namespace CodeWars
       result.Clear();
       var output = topWords.OrderBy(e => e.Value).Select(e => new { e.Key }).ToList();
 
-      for (int i = output.Count-1; i >=0; i--)
+      for (int i = output.Count - 1; i >= 0; i--)
       {
-      result.Add(output[i].Key.ToString());
+        result.Add(output[i].Key.ToString());
         counter++;
         if (counter > 2) break;
       }
