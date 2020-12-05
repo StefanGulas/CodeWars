@@ -20,6 +20,7 @@ namespace CodeWars
       s = s.Replace(".", "");
       s = s.Replace("?", "");
       s = s.Replace(":", "");
+      s = s.Replace(";", "");
       s = s.Replace("!", "");
       s = s.Replace("-", "");
       s = s.Replace("(", "");
