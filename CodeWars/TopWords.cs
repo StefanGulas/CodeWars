@@ -27,7 +27,16 @@ namespace CodeWars
       s = s.Replace(")", "");
       s = s.Replace("\r\n", "");
       s = s.Replace("\n", "");
-      s = s.Replace("\r", "");
+      s = s.Replace("_", "");
+      s = s.Replace("#", "");
+      s = s.Replace("%", "");
+      s = s.Replace("&", "");
+      s = s.Replace("%", "");
+      s = s.Replace("`", "");
+      s = s.Replace("´", "");
+      s = s.Replace("=", "");
+      s = s.Replace("§", "");
+      s = s.Replace("~", "");
 
 
       List<string> result = s.Split(' ').ToList();
