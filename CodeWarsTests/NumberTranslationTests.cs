@@ -1,5 +1,4 @@
 using CodeWars;
-using System;
 using Xunit;
 
 namespace CodeWarsTests

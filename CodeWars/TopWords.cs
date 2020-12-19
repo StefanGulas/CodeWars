@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace CodeWars
 {
@@ -11,36 +12,50 @@ namespace CodeWars
 
       if (s == "") return new List<string>() { };
       s = s.ToLower();
-      s = s.Replace("''", "");
+      //s = s.Replace("''", "");
       //s = s.Replace(" ' ", "");
-      s = s.Replace("' ", "");
-      s = s.Replace(" '", "");
-      s = s.Replace(",", "");
-      s = s.Replace("/", "");
-      s = s.Replace(".", "");
-      s = s.Replace("?", "");
-      s = s.Replace(":", "");
-      s = s.Replace(";", "");
-      s = s.Replace("!", "");
-      s = s.Replace("-", "");
-      s = s.Replace("(", "");
-      s = s.Replace(")", "");
-      s = s.Replace("\r\n", "");
-      s = s.Replace("\n", "");
-      s = s.Replace("_", "");
-      s = s.Replace("#", "");
-      s = s.Replace("%", "");
-      s = s.Replace("&", "");
-      s = s.Replace("%", "");
-      s = s.Replace("`", "");
-      s = s.Replace("´", "");
-      s = s.Replace("=", "");
-      s = s.Replace("§", "");
-      s = s.Replace("~", "");
+      //s = s.Replace("' ", "");
+      //s = s.Replace(" '", "");
+      s = s.Replace(",", " ");
+      s = s.Replace("/", " ");
+      s = s.Replace(".", " ");
+      s = s.Replace("?", " ");
+      s = s.Replace(":", " ");
+      s = s.Replace(";", " ");
+      s = s.Replace("!", " ");
+      s = s.Replace("-", " ");
+      s = s.Replace("(", " ");
+      s = s.Replace(")", " ");
+      s = s.Replace("\r\n", " ");
+      s = s.Replace("\n", " ");
+      s = s.Replace("_", " ");
+      s = s.Replace("#", " ");
+      s = s.Replace("%", " ");
+      s = s.Replace("&", " ");
+      s = s.Replace("%", " ");
+      s = s.Replace("`", " ");
+      s = s.Replace("´", " ");
+      s = s.Replace("=", " ");
+      s = s.Replace("§", " ");
+      s = s.Replace("~", " ");
+      s = s.Replace("  ", " ");
 
 
+
+      List<string> result1 = new List<string>();
       List<string> result = s.Split(' ').ToList();
       result.RemoveAll(item => item == "");
+      result.RemoveAll(item => item == " ");
+
+      foreach (var item in result)
+      {
+        if (!Regex.IsMatch(item, ".*?[a-z].*?")) result1.Add(item);
+      }
+      foreach (var item in result1)
+      {
+        result.Remove(item);
+      }
+
       if (result.Count < 3) return result;
       var topWords = new SortedDictionary<string, int>();
       int counter = 0;

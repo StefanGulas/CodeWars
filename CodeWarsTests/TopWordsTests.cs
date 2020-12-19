@@ -15,9 +15,14 @@ namespace CodeWarsTests
       Assert.Equal(new List<string> { "e", "ddd", "aa" }, TopWords.Top3("e e e e DDD ddd DdD: ddd ddd aa aA Aa, bb cc cC e e e"));
       Assert.Equal(new List<string> { "won't", "wont" }, TopWords.Top3("  //wont won't won't "));
       Assert.Equal(new List<string> { "e" }, TopWords.Top3("  , e   .. "));
+      Assert.Equal(new List<string> { "'a'" }, TopWords.Top3("  'a'  "));
+      Assert.Equal(new List<string> { "'a''''" }, TopWords.Top3("  'a''''  "));
+      Assert.Equal(new List<string> { "'''''a''''" }, TopWords.Top3("''''''''' ''' # '   '''''a''''  "));
+      Assert.Equal(new List<string> { }, TopWords.Top3("  ...  "));
+      Assert.Equal(new List<string> { }, TopWords.Top3("  ...  "));
       Assert.Equal(new List<string> { }, TopWords.Top3("  ...  "));
       Assert.Equal(new List<string> { }, TopWords.Top3("  '  "));
-      Assert.Equal(new List<string> { }, TopWords.Top3("  '''  "));
+      Assert.Equal(new List<string> { "''n'"}, TopWords.Top3("  ''n'  "));
       Assert.Equal(new List<string> { "a", "of", "on" }, TopWords.Top3(
           string.Join("\n", new string[]{"In a village of La Mancha, the name of which I have no desire to call to",
                   "mind, there lived not long since one of those gentlemen that keep a lance",
