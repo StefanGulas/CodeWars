@@ -15,7 +15,7 @@ namespace CodeWarsTests
       Assert.Equal(expected, actual);
     }
     [Fact]
-    public void BuddyPairsLarge()
+    public void ParanthesesLarge()
     {
       static void testing(bool expected, string parentheses)
       {
@@ -28,6 +28,21 @@ namespace CodeWarsTests
       testing(false, ")((((");
       testing(false, "()(areztzr)()()()()()((((((()))))(((((((((((()))(()))()())()((");
       testing(true, "()(areztzr)()()()()()((((((()))))(((((((((((()))(()))()())()(()))))))))))");
+    }
+    [Theory]
+    [InlineData(true, "()")]
+    [InlineData(true, "34543(1081184 1331967)")]
+    [InlineData(false, ")((((")]
+    [InlineData(true, "")]
+    [InlineData(false, "()(areztzr)()()()()()((((((()))))(((((((((((()))(()))()())()((")]
+    public void ParanthesesTheory(bool expected, string parentheses)
+    {
+      
+    
+
+        Assert.Equal(expected, ValidParentheses.ValidParenthesis(parentheses));
+    
+
     }
   }
 }
